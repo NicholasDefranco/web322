@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-md-12">
+
+	<legend><h2>Add People</h2></legend>
+	<br>
+	<!-- 
+	method - HTTP verb to be used when a submission is made
+	action - route
+	-->
+	<form method="post" action="/people/add">
+	    <fieldset>
+		<legend>Personal Information</legend>
+		<div class="row">
+		    <div class="col-md-6">
+			<div class="form-group">
+			    <!-- this line is required to have the id appear first when retreiving the newly created json data -->
+			    <input class="form-control" id="id" type="hidden" name="id" placeholder="">
+			    <label for="first_name">First Name:</label>
+			    <input class="form-control" id="first_name" name="first_name" type="text">
+			</div>
+		    </div>
+		    <div class="col-md-6">
+			<div class="form-group">
+			    <label for="last_name">Last Name:</label>
+			    <input class="form-control" id="last_name" name="last_name" type="text">
+			</div>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-6">
+			<div class="form-group">
+			    <label for="phone">Phone:</label>
+			    <input class="form-control" id="phone" name="phone" type="tel">
+			</div>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-3">
+			<div class="form-group">
+			    <label for="address">Address (Street):</label>
+			    <input class="form-control" id="address" name="address" type="text">
+			</div>
+		    </div>
+		    <div class="col-md-3">
+			<label for="city">Address (City):</label>
+			<input class="form-control" id="city" name="city" type="text">
+		    </div>
+		</div>
+	    </fieldset>
+
+	    <fieldset>
+		<legend>Car Information</legend>
+		<div class="row">
+		    <div class="col-md-3">
+			<div class="form-group">
+			    <label for="vin">Vin :</label>
+			    <input class="form-control" id="vin" name="vin" type="text">
+			</div>
+		    </div>
+	    </div></fieldset>
+
+	    <hr>
+	    <input type="reset" class="btn btn-primary pull-left"
+	    value="Reset" Person">
+
+	    <input type="submit" class="btn btn-primary pull-right" value="Add Person"><br><br><br>
+
+	</form>
+    </div>
+</div>
+{{#if message}}
+	<div class="row">
+	<div class="col-md-12">
+		<h2>{{message}}</h2>
+	</div>
+	</div>
+{{/if}}

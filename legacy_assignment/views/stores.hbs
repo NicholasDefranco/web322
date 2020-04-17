@@ -1,0 +1,34 @@
+<div class="row">
+<div class="col-md-12">
+        <legend><h2>Stores</h2></legend>
+        <hr />
+{{#if stores}}
+	<div class="table-reponsive">
+	<table class="table">
+		<thead>
+		<tr>
+			<th class="col-md-2">Store&nbsp;ID</th>
+			<th class="col-md-3">Store&nbsp;Name</th>
+			<th class="col-md-2">Store&nbsp;Phone</th>
+			<th class="col-md-5">Store&nbsp;Address</th>
+		</tr>
+		</thead>
+		<tbody>
+{{#each stores}}
+		<tr>
+			<td class="col-md-2">{{id}}</td>
+			<td class="col-md-3"><a
+			href="/cars?make={{retailer}}">{{retailer}}</a></td>
+			<td class="col-md-2"><a href="tel:{{phone}}">{{phone}}</a></td>
+			<td class="col-md-5">{{address}},&nbsp;{{city}}</td>
+		</tr>
+{{/each}}
+		</tbody>
+	</table>
+	</div>
+{{else}}
+        {{#errMsg}}{{message}}{{/errMsg}}
+{{/if}}
+
+</div>
+</div>

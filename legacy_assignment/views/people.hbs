@@ -1,0 +1,34 @@
+<div class="row">
+<div class="col-md-12">
+        <legend><h2>People</h2></legend>
+        <hr />
+{{#if people}}
+	<table class="table">
+		<thead>
+		<tr>
+			<th class="col-md-2">Person&nbsp;ID</th>
+			<th class="col-md-2">Full&nbsp;Name</th>
+			<th class="col-md-2">Phone&nbsp;Number</th>
+			<th class="col-md-3">Address</th>
+			<th class="col-md-3">Car&nbsp;Vin</th>
+		</tr>
+		</thead>
+		<tbody>
+{{#each people}}
+		<tr>
+			<td class="col-md-2">{{id}}</td>
+			<td class="col-md-2"><a
+			href="/people/{{id}}">{{first_name}}&nbsp;{{last_name}}</a></td>
+			<td class="col-md-2"><a href="tel:{{phone}}">{{phone}}</a></td>
+			<td class="col-md-3">{{address}}&nbsp;{{city}}</td>
+			<td class="col-md-3"><a href="/cars?vin={{vin}}">{{vin}}</a></td>
+		</tr>
+{{/each}}
+		</tbody>
+	</table>
+{{else}}
+        {{#errMsg}}{{message}}{{/errMsg}}
+{{/if}}
+
+</div>
+</div>

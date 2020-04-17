@@ -1,0 +1,81 @@
+{{#if person}}
+<div class="row">
+<div class="col-md-12">
+        <legend><h2>{{person.first_name}} {{ person.last_name}} - Person: {{
+        person.id}}</h2></legend>
+        <hr />
+        <form method="post" action="/person/update">
+                <fieldset>
+                <legend>Personal Information</legend>
+
+                <input class="form-control" id="id" name="id" type="hidden"
+                value="{{person.id}}" />
+
+                <div class="row">
+
+                        <div class="col-md-6">
+                        <div class="form-group">
+                                <label for="first_name">First Name:</label>
+                                <input class="form-control" id="first_name" name="first_name" type="text" value="{{person.first_name}}" />
+                        </div>
+                        </div>
+
+                        <div class="col-md-6">
+                        <div class="form-group">
+                                <label for="last_name">Last Name:</label>
+                                <input class="form-control" id="last_name" name="last_name" type="text" value="{{person.last_name}}" />
+                        </div>
+                        </div>
+
+                </div>
+
+                <div class="row">
+                        <div class="col-md-6">
+                        <div class="form-group">
+                                <label for="phone">Phone:</label>
+                                <input class="form-control" id="phone" name="phone" type="text" value="{{person.phone}}" />
+                        </div>
+                        </div>
+                </div>
+
+                <div class="row">
+                        <div class="col-md-3">
+                        <div class="form-group">
+                                <label for="address">Address (Street):</label>
+                                <input class="form-control" id="address" name="address" type="text" value="{{person.address}}" />
+                        </div>
+                        </div>
+
+                        <div class="col-md-3">
+                                <div class="form-group">
+                                        <label for="city">Address (City):</label>
+                                        <input class="form-control" id="city" name="city" type="text" value="{{person.city}}" />
+                                </div>
+                        </div>
+                </div>
+
+                </fieldset>
+
+                <fieldset>
+                <legend>Car Information</legend>
+                <div class="row">
+                        <div class="col-md-12">
+                                <div class="form-group">
+                                        <label for="vin">Person's Vin Number:</label>
+                                        <input class="form-control" id="vin" name="vin" type="text" value="{{person.vin}}" />
+                                </div>
+                        </div>
+                </div>
+                </fieldset>
+
+                <input type="reset" class="btn btn-primary pull-left" value="Reset" />
+                <input type="submit" class="btn btn-primary pull-right" value="Update Person" /><br /><br /><br />
+
+        </form>
+</div>
+</div>
+{{else}}
+<div class="row">
+        {{#errMsg}}{{message}}{{/errMsg}}
+</div>
+{{/if}}
