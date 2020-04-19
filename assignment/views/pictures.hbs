@@ -1,0 +1,20 @@
+<div class="row">
+<div class="col-md-12">
+         <h2>Pictures</h2>
+         <a href="/pictures/add" class="btn btn-success pull-right">Add New Picture</a>
+         <hr />
+{{#each pictures}}
+<div class="col-md-4">
+        <img src="uploaded/{{this}}" class="img-responsive img-thumbnail" />
+</div>
+{{else}}
+        {{#if errorMessage}}
+                <div class="row">
+                        <div class="alert alert-info">
+                                {{errorMessage}}
+                        </div>
+                </div>
+        {{/if}}
+{{/each}}
+</div>
+</div>

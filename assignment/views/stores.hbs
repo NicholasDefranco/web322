@@ -1,0 +1,50 @@
+<div class="row">
+<div class="col-md-12">
+        <h2>Stores</h2>
+        <a href="/stores/add" class="btn btn-success pull-right">Add New Store</a>
+        <hr />
+{{#if stores}}
+	<div class="table-reponsive">
+	<table class="table">
+		<thead>
+		<tr>
+			<th class="col-md-2">Store&nbsp;ID</th>
+			<th class="col-md-3">Store&nbsp;Name</th>
+			<th class="col-md-2">Store&nbsp;Phone</th>
+			<th class="col-md-5">Store&nbsp;Address</th>
+                        <th></th>
+		</tr>
+		</thead>
+		<tbody>
+{{#each stores}}
+		<tr>
+                        <td><a href="/store/{{id}}">{{id}}</a></td>
+			<td class="col-md-3"><a
+			href="/cars?make={{retailer}}">{{retailer}}</a></td>
+			<td class="col-md-2"><a href="tel:{{phone}}">{{phone}}</a></td>
+			<td class="col-md-5">{{address}},&nbsp;{{city}}</td>
+                        <td> <a href="/stores/delete/{{id}}" class="btn
+                        btn-danger">remove</a></td>
+		</tr>
+{{/each}}
+		</tbody>
+	</table>
+	</div>
+{{else}}
+        {{#if errorMessage}}
+        <div class="alert alert-danger alert-dismissible">
+                <strong> Error: </strong>
+                {{errorMessage}}
+        </div>
+        {{/if}}
+
+        {{#if information}}
+        <div class="alert alert-info alert-dismissible">
+                <strong> Info: </strong>
+                {{information}}
+        </div>
+        {{/if}}
+{{/if}}
+
+</div>
+</div>

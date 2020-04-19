@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-md-12">
+
+        {{#if errorMessage}}
+                <div class="alert alert-danger">
+                        <strong> Error: </strong>
+                        {{errorMessage}}
+                </div>
+        {{/if}}
+
+	<legend><h2>Add Car</h2></legend>
+	<br>
+	<!--
+	method - HTTP verb to be used when a submission is made
+	action - route
+	-->
+	<form method="post" action="/car/add">
+	    <fieldset>
+		<legend>Car Information</legend>
+		<div class="row">
+		    <div class="col-md-6">
+			<div class="form-group">
+			    <label for="make">Car Make:</label>
+			    <input class="form-control" id="make"
+                            name="make" type="text">
+			</div>
+		    </div>
+		    <div class="col-md-6">
+			<div class="form-group">
+			    <label for="model">Car Model:</label>
+			    <input class="form-control" id="model"
+                            name="model" type="text">
+			</div>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="col-md-6">
+			<div class="form-group">
+			    <label for="year">Car Year:</label>
+			    <input class="form-control" id="year"
+                            name="year" type="text">
+			</div>
+		    </div>
+		</div>
+	    </fieldset>
+
+	    <fieldset>
+		<legend>Vin Information</legend>
+		<div class="row">
+		    <div class="col-md-3">
+			<div class="form-group">
+			    <label for="vin">Vin:</label>
+                            <!-- NOTE: vin is required -->
+			    <input class="form-control" id="vin" name="vin"
+                            type="text" required>
+			</div>
+		    </div>
+	    </div></fieldset>
+
+	    <hr>
+	    <input type="reset" class="btn btn-primary pull-left"
+                    value="Reset Car">
+
+            <input type="submit" class="btn btn-primary pull-right"
+                         value="Add Car"><br><br><br>
+
+	</form>
+    </div>
+</div>
