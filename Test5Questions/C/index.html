@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Ajax Test</title>
+        <script>
+            function makeAJAXRequest(method, url, data){
+                fetch(url, { method: method })
+                .then(response => response.json())
+                .then(json => {
+                    console.log(json);   
+                });
+            }
+            function AddPerson(){
+                 makeAJAXRequest("POST", "/test/person", {fName: "Billy", lName: "Bob"});
+            }
+        </script>
+    </head>
+    <body>
+        <p>Test question:</p>
+        <!-- Add New User -->
+        <button type="button" onclick="AddPerson()">Add New Person</button><br /><br />
+    </body>
+
+</html>
